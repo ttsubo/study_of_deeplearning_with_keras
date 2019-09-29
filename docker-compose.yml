@@ -1,0 +1,15 @@
+version: '2.3'
+services:
+  deeplearning:
+    build: build/.
+    image: ttsubo/deeplearning_with_keras:1.0
+    ports:
+    - "8888:8888"
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+#      - CUDA_VISIBLE_DEVICES=""
+    container_name: Keras
+    hostname: Keras
+    volumes:
+    - ./examples:/root/examples
